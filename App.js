@@ -13,7 +13,6 @@ export default function App() {
         />
         <Text style={styles.name}>Mia Čosić</Text>
       </View>
-
       <View style={styles.cvSection}>
         <Text style={styles.headers}>Obrazovanje</Text>
         <Text style={styles.cvText}>2012-2016 II. gimnazija Osijek</Text>
@@ -29,7 +28,6 @@ export default function App() {
           Office manager @ Lumen Spei doo 2022.-...
         </Text>
       </View>
-
       <View>
         <TouchableOpacity style={styles.touchable}
           onPress={() => Alert.alert("Mobitel: '+385 99 255 8507', Mail:'mcosic@ffos.hr' ")}
@@ -89,5 +87,4 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: "#FCBF4F",
   },
-
 });
