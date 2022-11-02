@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import { Linking } from 'react-native';
 import Constants from 'expo-constants';
-
-
 
 export default function App() {
   return (
@@ -16,11 +15,27 @@ export default function App() {
       </View>
 
       <View style={styles.cvSection}>
-        <Text style={styles.headers}>About Me</Text>
-        <Text style={styles.cvText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ducimus non ab est odio esse eligendi repudiandae molestiae officiis possimus fugit, eum deleniti quaerat fuga molestias consectetur. Laborum, eligendi doloribus?W</Text>
-        <Text style={styles.cvText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ducimus non ab est odio esse eligendi repudiandae molestiae officiis possimus fugit, eum deleniti quaerat fuga molestias consectetur. Laborum, eligendi doloribus?W</Text>
-        <Text style={styles.cvText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ducimus non ab est odio esse eligendi repudiandae molestiae officiis possimus fugit, eum deleniti quaerat fuga molestias consectetur. Laborum, eligendi doloribus?W</Text>
-        <Text style={styles.cvText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ducimus non ab est odio esse eligendi repudiandae molestiae officiis possimus fugit, eum deleniti quaerat fuga molestias consectetur. Laborum, eligendi doloribus?W</Text>
+        <Text style={styles.headers}>Obrazovanje</Text>
+        <Text style={styles.cvText}>2012-2016 II. gimnazija Osijek</Text>
+        <Text style={styles.cvText}>2017-2021 Preddiplomski studij Informatologije, Filozofski fakultet Osijek</Text>
+        <Text style={styles.cvText}>2021-2023 Diplomski studij Informatologije i Informacijske tehnologije, Filozofski fakultet Osijek</Text>
+      </View>
+      <View style={styles.cvSection}>
+        <Text style={styles.headers}>Radno iskustvo</Text>
+        <Text style={styles.cvText}>Volontiranje: KulenDayz 2021.-2022.</Text>
+        <Text style={styles.cvText}
+          onPress={() => Linking.openURL('https://lumenspei.com/')}
+        >
+          Office manager @ Lumen Spei doo 2022.-...
+        </Text>
+      </View>
+
+      <View>
+        <TouchableOpacity style={styles.touchable}
+          onPress={() => Alert.alert("Mobitel: '+385 99 255 8507', Mail:'mcosic@ffos.hr' ")}
+        >
+          <Text style={styles.contact}>CONTACT INFO</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -48,7 +63,7 @@ const styles = StyleSheet.create({
 
   name: {
     fontSize: 24,
-    color: "white",
+    color: "#FCBF4F",
     marginLeft: 15,
   },
   cvSection: {
@@ -59,13 +74,20 @@ const styles = StyleSheet.create({
   },
   headers: {
     fontSize: 28,
-    color: "white",
+    color: "#FCBF4F",
   },
   cvText: {
     fontSize: 22,
     color: "white",
     marginTop: 10,
-    textAlign: "justify",
+  },
+
+  touchable: {
+    marginTop: 50,
+  },
+  contact: {
+    fontSize: 30,
+    color: "#FCBF4F",
   },
 
 });
